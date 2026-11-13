@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yodha The Incredible Fitness | Gym in Sion, Mumbai</title>
+<meta name="description" content="Yodha The Incredible Fitness is Sion's top-rated gym in Mumbai. Personal training, HIIT, group fitness classes, weight training and more. Open 6 AM daily. First trial session free. Call 091376 98201.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap">
+
+<style>
+/* ─── TOKENS ─────────────────────────────── */
+:root {
+  --bg:         #0C0D0E;
+  --surface:    #141618;
+  --surface-2:  #1C1F22;
+  --surface-3:  #23272B;
+  --orange:     #CC0000;
+  --orange-lt:  #E62020;
+  --orange-dim: rgba(204,0,0,0.12);
+  --orange-bdr: rgba(204,0,0,0.25);
+  --steel:      #6B6B6B;
+  --text:       #F0EEEC;
+  --text-2:     #A8A5A1;
+  --muted:      #5C5A58;
+  --bar-h:      42px;
+  --nav-h:      80px;
+  --offset:     calc(var(--bar-h) + var(--nav-h));
+}
+
+/* ─── ANNOUNCEMENT BAR ─── */
+.announce-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--bar-h);
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  gap: 24px; padding: 0 20px;
+  z-index: 210; font-family: 'Inter', sans-serif; font-size: 13px;
+  font-weight: 600; color: #fff; letter-spacing: 0.02em;
+}
+.announce-bar a {
+  color: #fff; text-decoration: underline; text-underline-offset: 2px;
+  transition: opacity 0.15s; white-space: nowrap;
+}
+.announce-bar a:hover { opacity: 0.8; }
+.announce-bar-pill {
+  background: rgba(255,255,255,0.18); border-radius: 20px;
+  padding: 3px 12px; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .announce-bar { font-size: 11.5px; gap: 10px; }
+  .announce-bar-pill { display: none; }
+}
+
+/* ─── FLOATING MOBILE CTA ─── */
+.float-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 190;
+  background: var(--surface);
+  border-top: 1px solid rgba(240,238,236,0.1);
+  padding: 12px 20px 16px;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .float-cta { display: flex; }
+}
+.float-cta-btn {
+  flex: 1; padding: 14px 16px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; border: none;
+  cursor: pointer; border-radius: 4px; text-align: center;
+}
+.float-cta-btn.primary { background: var(--orange); color: #fff; }
+.float-cta-btn.secondary { background: rgba(255,255,255,0.08); color: var(--text); }
+
+/* ─── LEAD FORM SECTION ─── */
+.lead-form-section {
+  background: var(--surface);
+  padding: 80px 48px;
+}
+.lead-form-inner {
+  max-width: 960px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: flex-start;
+}
+.lead-form-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(36px, 4.5vw, 62px);
+  line-height: 0.97; color: var(--text); margin-bottom: 16px;
+}
+.lead-form-sub { font-size: 15px; color: var(--text-2); line-height: 1.65; }
+.lead-form-trust { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.lead-form-badge {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 6px 14px;
+  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: var(--text-2);
+}
+.lead-form-badge span { color: var(--orange); font-size: 14px; }
+.lead-form {
+  background: var(--surface-2); border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 28px;
+}
+.lead-form-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text); margin-bottom: 4px;
+}
+.lead-form-note { font-size: 12px; color: var(--text-2); margin-bottom: 20px; }
+.form-group { margin-bottom: 14px; }
+.form-label {
+  display: block; font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+}
+.form-input {
+  width: 100%; padding: 13px 16px;
+  background: var(--bg); border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px;
+  border-radius: 6px; outline: none; transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--orange); }
+.form-input::placeholder { color: var(--muted); }
+.form-submit {
+  width: 100%; padding: 15px;
+  background: var(--orange); color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 13px;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  border: none; cursor: pointer; border-radius: 6px; margin-top: 6px;
+  transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.form-submit:hover { background: var(--orange-lt); }
+.form-privacy { font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; }
+@media (max-width: 768px) {
+  .lead-form-inner { grid-template-columns: 1fr; gap: 36px; }
+  .lead-form-section { padding: 64px 20px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--bar-h) + var(--nav-h) + 16px); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: var(--bar-h); left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  padding: 0 48px;
+  transition: background 0.45s, border-color 0.45s, box-shadow 0.45s;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: #ffffff;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: 12px;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--offset);
+  left: 0; right: 0;
+  background: #ffffff;
+  backdrop-filter: blur(14px);
+  padding: 24px 24px 32px;
+  flex-direction: column;
+  gap: 0;
+  z-index: 199;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a, .mobile-menu button {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  border-left: none; border-right: none; border-top: none;
+}
+.mobile-menu a:hover, .mobile-menu button:hover { color: var(--orange); }
+.mobile-menu-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+.mobile-menu-btns .btn-nav {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 14px;
+  border-bottom: none;
+}
+nav.scrolled { background: #ffffff; box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
+.logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.logo-icon {
+  height: 60px;
+  width: auto;
+  max-width: 150px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+  padding: 0 32px;
+}
+.nav-center a {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #3a3a3a;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-center a:hover { color: var(--orange); }
+.nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-left: auto; }
+.nav-buttons { display: flex; align-items: center; gap: 10px; }
+.btn-nav {
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+  border: none;
+}
+.btn-nav.primary { background: var(--orange); color: #fff; border: 1.5px solid var(--orange); }
+.btn-nav.primary:hover { background: var(--orange-lt); transform: translateY(-1px); }
+.btn-nav.secondary { background: transparent; color: #1a1a1a; border: 1.5px solid rgba(0,0,0,0.3); }
+.btn-nav.secondary:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+}
+.hero-cards {
+  position: absolute;
+  bottom: 28px;
+  left: 0; right: 0;
+  z-index: 3;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.hero-card {
+  display: none;
+  align-items: center;
+  gap: 18px;
+  background: rgba(10,11,12,0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(240,238,236,0.09);
+  border-radius: 10px;
+  padding: 14px 18px;
+  transition: border-color 0.2s;
+}
+.hero-card.active { display: flex; }
+.hero-card:hover { border-color: rgba(240,238,236,0.25); }
+.hero-card-icon {
+  width: 46px; height: 46px;
+  background: #C04A00;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: #fff;
+}
+.hero-card-body { flex: 1; min-width: 0; }
+.hero-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.hero-card-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #fff; background: var(--orange); padding: 2px 9px; border-radius: 20px; flex-shrink: 0;
+}
+.hero-card-sub { font-family: 'Inter', sans-serif; font-size: 11.5px; color: rgba(240,238,236,0.45); }
+.hero-card-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text); line-height: 1.1; margin-bottom: 2px;
+}
+.hero-card-desc { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(240,238,236,0.45); line-height: 1.5; }
+.hero-card-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.hero-card-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--text); background: rgba(26,28,30,0.95);
+  border: 1px solid rgba(240,238,236,0.12);
+  padding: 9px 16px; border-radius: 5px; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s; white-space: nowrap;
+}
+.hero-card-btn:hover { background: var(--orange); border-color: var(--orange); }
+.hero-card-nav {
+  width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+  background: rgba(26,28,30,0.95); border: 1px solid rgba(240,238,236,0.12);
+  border-radius: 5px; color: var(--text); font-size: 13px; cursor: pointer; transition: background 0.2s;
+}
+.hero-card-nav:hover { background: rgba(60,62,64,0.95); }
+
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s cubic-bezier(0.4,0,0.2,1); }
+.slide.active { opacity: 1; }
+.slide img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  transform: scale(1.04); transition: transform 8s ease-out;
+}
+.slide.active img { transform: scale(1); }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(12,13,14,0.65) 0%, rgba(12,13,14,0.2) 60%, transparent 100%);
+}
+.hero-content {
+  position: absolute; bottom: 130px; left: 0; right: 0;
+  text-align: center; z-index: 2; padding: 0 24px;
+}
+.hero-headline {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 900;
+  font-size: clamp(68px, 9.5vw, 136px);
+  line-height: 0.9;
+  color: var(--text);
+  margin-bottom: 20px;
+  opacity: 0; transform: translateY(16px);
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+.hero-headline .accent { color: var(--orange); font-style: italic; }
+.hero-sub {
+  font-size: 17px; font-weight: 400; color: rgba(240,238,236,0.8);
+  max-width: 480px; margin: 0 auto 36px;
+  line-height: 1.65;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.7s 0.75s forwards;
+}
+.hero-actions {
+  display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 0.7s 0.95s forwards;
+}
+.btn-primary {
+  background: var(--orange); color: #fff;
+  padding: 15px 40px; font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.2s, transform 0.1s; display: inline-block; border: none;
+}
+.btn-primary:hover { background: var(--orange-lt); transform: translateY(-2px); }
+.btn-ghost {
+  border: 1px solid rgba(240,238,236,0.3); color: var(--text);
+  padding: 15px 40px; font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer; transition: border-color 0.2s, color 0.2s; display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ─── STATS BAR ─── */
+.stats-bar {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+.stat {
+  padding: 40px 56px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.stat-num {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 56px; line-height: 1; color: var(--orange);
+  letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
+}
+.stat-lbl {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11.5px; font-weight: 500; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ─── SECTION CHROME ─── */
+.eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 900; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 14px;
+}
+.eyebrow::before {
+  content: ''; width: 28px; height: 2.5px; background: var(--orange);
+  display: block; flex-shrink: 0;
+}
+h2.section-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(42px, 5.5vw, 78px);
+  line-height: 0.95; color: var(--text); margin-bottom: 20px; text-wrap: balance;
+}
+.section-body { font-size: 16px; color: #C4C0BC; line-height: 1.75; max-width: 500px; }
+
+/* ─── TRAINING SECTION ─── */
+.training { background: #000; padding: 110px 48px; }
+.training-inner { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 120px; }
+.training-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.training-row.flip { direction: rtl; }
+.training-row.flip > * { direction: ltr; }
+.training-img { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 40px rgba(232,93,4,0.2); }
+.training-img img { width: 100%; aspect-ratio: 3/2; object-fit: cover; object-position: center top; transition: transform 0.7s ease; display: block; }
+.training-img:hover img { transform: scale(1.05); }
+.service-bullets { margin-top: 28px; display: flex; flex-direction: column; gap: 11px; }
+.service-bullets li { display: flex; align-items: center; gap: 13px; font-size: 15px; color: #C4C0BC; }
+.service-bullets li::before {
+  content: '';
+  width: 18px; height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='8.5' fill='rgba(232,93,4,0.15)' stroke='%23E85D04' stroke-width='1'/%3E%3Cpath d='M5 9l2.8 2.8L13 6' stroke='%23E85D04' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-size: contain; background-repeat: no-repeat; flex-shrink: 0;
+}
+.training-img-caption {
+  position: absolute; bottom: 18px; left: 18px;
+  background: rgba(10,10,10,0.78); backdrop-filter: blur(6px);
+  padding: 10px 14px; border-radius: 6px; z-index: 2;
+}
+.training-img-caption-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 2px;
+}
+.training-img-caption-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--text-2); }
+.training-explore-link {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text); transition: color 0.2s;
+}
+.training-explore-link:hover { color: var(--orange); }
+.training-explore-link svg { transition: transform 0.2s; }
+.training-explore-link:hover svg { transform: translateX(4px); }
+
+/* ─── AMENITIES ─── */
+.amenities { background: #090909; padding: 90px 48px; }
+.amenities-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start;
+}
+.amenities-left { display: flex; flex-direction: column; }
+.amenities-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(42px, 5vw, 68px);
+  color: var(--text); margin-bottom: 28px; line-height: 1; text-transform: uppercase;
+}
+.amenities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.amenity {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 10px; padding: 18px 16px; background: #141414;
+  border-radius: 8px; border: 1px solid rgba(240,238,236,0.06); min-height: 110px;
+}
+.amenity-icon { width: 36px; height: 36px; color: var(--orange); flex-shrink: 0; }
+.amenity-icon svg { width: 36px; height: 36px; color: var(--orange); }
+.amenity-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text); line-height: 1.2;
+}
+.amenity-cta-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; padding: 18px 16px; background: var(--orange); border-radius: 8px;
+  min-height: 110px; cursor: pointer; border: none; transition: background 0.2s; text-align: center;
+}
+.amenity-cta-card:hover { background: #c04a00; }
+.amenity-cta-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
+}
+.amenity-cta-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.75); }
+.amenities-gallery { display: flex; flex-direction: column; gap: 12px; margin-top: 100px; }
+.amenities-main { position: relative; overflow: hidden; border-radius: 8px; }
+.amenities-main-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: opacity 0.5s ease; }
+.amenities-gallery-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; background: rgba(12,13,14,0.6); backdrop-filter: blur(6px);
+  border: 1px solid rgba(240,238,236,0.2); color: var(--text);
+  font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; z-index: 2; line-height: 1; border-radius: 4px;
+}
+.amenities-gallery-btn:hover { background: var(--orange); border-color: var(--orange); }
+.amenities-gallery-btn.prev { left: 10px; }
+.amenities-gallery-btn.next { right: 10px; }
+.amenities-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.amenities-thumb {
+  aspect-ratio: 16/10; object-fit: cover; cursor: pointer;
+  opacity: 0.5; transition: opacity 0.25s; display: block; width: 100%; border-radius: 6px;
+}
+.amenities-thumb.active { opacity: 1; outline: 2px solid var(--orange); outline-offset: -2px; }
+.amenities-thumb:hover { opacity: 0.8; }
+
+/* ─── OUR CLASSES ─── */
+.classes { background: #090909; padding: 80px 48px; overflow: hidden; }
+.classes-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  max-width: 1280px; margin: 0 auto 40px;
+}
+.classes-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 0.92; color: var(--text);
+}
+.classes-heading .accent { color: var(--orange); }
+.classes-nav { display: flex; gap: 8px; }
+.classes-nav-btn {
+  width: 44px; height: 44px; border: 1px solid rgba(240,238,236,0.2);
+  border-radius: 50%; background: transparent; color: var(--text-2);
+  font-size: 20px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif;
+}
+.classes-nav-btn:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+.classes-track-wrap { max-width: 1280px; margin: 0 auto; overflow: hidden; }
+.classes-track { display: flex; gap: 14px; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
+.class-card {
+  flex: 0 0 230px; border-radius: 12px; overflow: hidden; position: relative;
+  cursor: pointer; height: 390px; border: 2px solid transparent;
+  transition: border-color 0.25s, transform 0.25s; background: #1a1a1a;
+}
+.class-card:hover { transform: translateY(-4px); }
+.class-card.active { border-color: var(--orange); }
+.class-card-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  transition: transform 0.65s ease; filter: brightness(0.72);
+}
+.class-card:hover .class-card-img { transform: scale(1.05); filter: brightness(0.85); }
+.class-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.1) 50%); z-index: 1;
+}
+.class-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 18px; z-index: 2; }
+.class-card-tag {
+  display: inline-block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 4px;
+}
+.class-card-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 800; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text); line-height: 1;
+}
+
+/* ─── ABOUT SECTION ─── */
+.about { background: #fff; padding: 100px 48px; }
+.about-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.95; color: #0C0D0E; margin-bottom: 28px; text-wrap: balance;
+}
+.about-content p { font-size: 16px; color: #444; line-height: 1.78; margin-bottom: 20px; }
+.about-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+.about-checklist li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: #333; }
+.about-checklist li::before {
+  content: '';
+  width: 18px; height: 18px; flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='8.5' fill='rgba(232,93,4,0.15)' stroke='%23E85D04' stroke-width='1'/%3E%3Cpath d='M5 9l2.8 2.8L13 6' stroke='%23E85D04' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-size: contain; background-repeat: no-repeat;
+}
+.about-img-wrap { position: relative; border-radius: 12px; overflow: hidden; }
+.about-img-wrap img { width: 100%; aspect-ratio: 768/722; object-fit: cover; object-position: center top; display: block; }
+.about-img-badge {
+  position: absolute; bottom: 24px; left: 24px;
+  background: rgba(10,10,10,0.85); backdrop-filter: blur(8px);
+  border: 1px solid rgba(240,238,236,0.12);
+  padding: 16px 20px; border-radius: 8px;
+}
+.about-img-badge-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 800; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text); line-height: 1;
+}
+.about-img-badge-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--orange); margin-top: 4px; }
+
+/* ─── HOURS SECTION ─── */
+/* ─── FOOTER HOURS TABLE ─── */
+.footer-hours-table { display: flex; flex-direction: column; gap: 0; margin-top: 4px; }
+.footer-hours-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.07);
+  font-family: 'Inter', sans-serif; font-size: 12.5px;
+}
+.footer-hours-row:last-child { border-bottom: none; }
+.footer-hours-day { font-weight: 600; color: #333; }
+.footer-hours-time { color: #666; font-weight: 400; }
+
+
+/* ─── TESTIMONIALS ─── */
+.testimonials { background: #fff; padding: 96px 48px; text-align: center; border-top: 1px solid rgba(0,0,0,0.07); }
+.testimonials-inner { max-width: 1100px; margin: 0 auto; }
+.testimonials-stars { display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 18px; }
+.testimonials-stars span { font-size: 20px; line-height: 1; }
+.testimonials-rating {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #888;
+}
+.testimonials-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(36px, 5vw, 62px);
+  color: #0C0D0E; line-height: 1.05; margin-bottom: 14px;
+}
+.testimonials-sub {
+  font-size: 15px; color: #666; max-width: 560px;
+  margin: 0 auto 52px; line-height: 1.6;
+}
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left; }
+.testimonial-card {
+  background: #f7f7f7; border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.07); padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.testimonial-quote-icon { font-size: 48px; line-height: 1; color: #ccc; opacity: 1; font-family: Georgia, serif; }
+.testimonial-quote { font-size: 14px; color: #555; line-height: 1.75; font-style: italic; flex: 1; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--orange-dim); border: 1px solid var(--orange-bdr);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: var(--orange);
+  flex-shrink: 0;
+}
+.testimonial-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #1a1a1a;
+}
+.testimonial-stars { font-size: 12px; color: #f5a623; }
+
+/* ─── FAQ ─── */
+.faq { background: #000; padding: 96px 48px; }
+.faq-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.8fr; gap: 80px; align-items: start; }
+.faq-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800; font-size: clamp(38px, 5vw, 64px);
+  color: var(--text); line-height: 1; text-wrap: balance;
+  position: sticky; top: calc(var(--nav-h) + 24px);
+}
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: #111; border-radius: 6px; overflow: hidden; border: 1px solid rgba(240,238,236,0.08); }
+.faq-btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 26px 28px; cursor: pointer; background: none; border: none; color: var(--text); text-align: left;
+}
+.faq-question {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700; font-size: clamp(15px, 1.6vw, 19px);
+  letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.2; flex: 1;
+  color: var(--text);
+}
+.faq-btn-icon {
+  width: 34px; height: 34px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange); transition: transform 0.3s; font-size: 30px; font-weight: 300;
+}
+.faq-item.open .faq-btn-icon { transform: rotate(45deg); }
+.faq-answer {
+  display: none; font-size: 14px; color: var(--text-2);
+  line-height: 1.75; padding: 0 28px 24px; max-width: 680px;
+}
+.faq-item.open .faq-answer { display: block; }
+
+/* ─── CTA STRIP ─── */
+.cta-strip-wrap {
+  background: #fff;
+  padding: 0 48px 80px;
+}
+.cta-strip {
+  background: var(--orange);
+  padding: 80px 48px;
+  text-align: center;
+  border-radius: 28px;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(232,93,4,0.35);
+}
+.cta-strip-heading {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 900; font-size: clamp(42px, 6vw, 88px);
+  line-height: 0.95; color: #fff; margin-bottom: 20px;
+}
+.cta-strip-sub { font-size: 16px; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 36px; line-height: 1.65; }
+.cta-strip-pills { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 36px; }
+.cta-strip-pill {
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 7px;
+}
+.cta-strip-pill::before { content: '✓'; font-weight: 700; }
+.btn-cta-dark {
+  background: #0C0D0E; color: #fff;
+  padding: 16px 48px; font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.2s; display: inline-block; border: none;
+}
+.btn-cta-dark:hover { background: #1a1a1a; }
+
+/* ─── FOOTER ─── */
+footer { background: #ffffff; padding: 72px 48px 36px; border-top: 1px solid rgba(0,0,0,0.08); }
+.footer-grid {
+  display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 56px; max-width: 1280px; margin: 0 auto 52px;
+}
+.footer-tagline { font-family: 'Inter', sans-serif; font-size: 13.5px; color: #666; margin-top: 16px; line-height: 1.7; max-width: 300px; }
+.footer-address-label {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #1a1a1a; margin-top: 18px; margin-bottom: 4px;
+}
+.footer-address { font-size: 13px; color: #555; line-height: 1.7; }
+.footer-address a { color: var(--orange); transition: color 0.2s; }
+.footer-address a:hover { color: var(--orange-lt); }
+.footer-socials { display: flex; gap: 10px; margin-top: 24px; }
+.footer-social-btn {
+  width: 40px; height: 40px; border: 1px solid rgba(0,0,0,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: #666; transition: border-color 0.2s, color 0.2s;
+}
+.footer-social-btn:hover { border-color: var(--orange); color: var(--orange); }
+.footer-social-btn svg { width: 16px; height: 16px; }
+.footer-col h4 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 22px;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 3px; }
+.footer-col ul li a { font-family: 'Inter', sans-serif; font-size: 13.5px; color: #555; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--orange); }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 28px; border-top: 1px solid rgba(0,0,0,0.08);
+  max-width: 1280px; margin: 0 auto;
+}
+.footer-copy { font-size: 12px; color: #888; }
+.footer-loc { font-size: 12px; color: #888; display: flex; align-items: center; gap: 6px; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1360px) {
+  .nav-center { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 1024px) {
+  nav { padding: 0 28px; }
+  .training { padding: 80px 28px; }
+  .training-inner { gap: 72px; }
+  .amenities { padding: 80px 28px; }
+  .amenities-inner { grid-template-columns: 1fr; gap: 48px; }
+  .amenities-grid { grid-template-columns: repeat(4, 1fr); }
+  .amenities-gallery { margin-top: 0; }
+  .stats-bar { flex-wrap: wrap; justify-content: center; }
+  .stat { min-width: 45%; padding: 32px 36px; }
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+
+  .faq-inner { grid-template-columns: 1fr; gap: 36px; }
+  .faq-heading { position: static; }
+  .classes { padding: 72px 28px; }
+  .cta-strip-wrap { padding: 0 28px 72px; }
+  .how-to-start { padding: 80px 28px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-buttons .btn-nav.secondary,
+  .nav-buttons .btn-nav.primary { display: none; }
+
+  .hero { min-height: 100svh; }
+  .hero-headline { font-size: clamp(44px, 12vw, 72px); margin-bottom: 12px; }
+  .hero-content { bottom: 200px; padding: 0 16px; }
+  .hero-cards { padding: 0 12px; bottom: 16px; }
+  .hero-card { gap: 10px; padding: 10px 12px; }
+  .hero-card-icon { width: 38px; height: 38px; flex-shrink: 0; }
+  .hero-card-heading { font-size: 13px; }
+  .hero-card-desc { font-size: 10.5px; }
+  .hero-card-btn { font-size: 10px; padding: 7px 10px; }
+  .hero-card-nav { width: 28px; height: 28px; font-size: 11px; }
+
+  .stats-bar { flex-wrap: wrap; }
+  .stat { min-width: 50%; padding: 28px 20px; }
+  .stat-num { font-size: 40px; }
+  .stat-lbl { font-size: 11px; }
+
+  .training { padding: 56px 20px; }
+  .training-inner { gap: 56px; }
+  .training-row, .training-row.flip { grid-template-columns: 1fr; direction: ltr; gap: 28px; }
+  .section-heading { font-size: clamp(34px, 9vw, 52px); }
+  .section-body { font-size: 15px; max-width: 100%; }
+  .service-bullets li { font-size: 14px; }
+  .training-explore-link { font-size: 12px; }
+
+  .amenities { padding: 56px 20px; }
+  .amenities-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .amenities-main-img { aspect-ratio: 4/3; }
+
+  .classes { padding: 48px 20px; }
+  .classes-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .class-card { flex: 0 0 200px; height: 300px; }
+  .class-card-name { font-size: 18px; }
+
+  .about { padding: 56px 20px; }
+  .about-inner { grid-template-columns: 1fr; gap: 36px; }
+
+  .cta-strip-wrap { padding: 0 16px 48px; background: #fff; }
+  .cta-strip { padding: 52px 20px; border-radius: 16px; }
+
+  .testimonials { padding: 56px 20px; }
+
+  .faq { padding: 56px 20px; }
+  .faq-inner { grid-template-columns: 1fr; gap: 32px; }
+  .faq-heading { position: static; font-size: clamp(30px, 8vw, 48px); }
+
+  footer { padding: 48px 20px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media (max-width: 480px) {
+  .announce-bar-pill { display: none; }
+  .announce-bar { font-size: 11.5px; gap: 8px; }
+
+  .hero-headline { font-size: clamp(38px, 13vw, 58px); }
+  .hero-content { bottom: 190px; }
+  .hero-cards { bottom: 12px; padding: 0 10px; }
+  .hero-card-desc { display: none; }
+
+  .stat { min-width: 50%; padding: 24px 16px; }
+  .stat-num { font-size: 36px; }
+
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .amenity-name { font-size: 11px; }
+
+  .class-card { flex: 0 0 175px; height: 270px; }
+
+  .cta-strip { padding: 44px 16px; }
+  .cta-strip-pills { gap: 12px; flex-direction: column; align-items: center; }
+
+  .step { padding: 24px 20px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-brand { grid-column: auto; }
+
+  .lead-form-section { padding: 48px 16px; }
+}
+
+@media (max-width: 360px) {
+  .hero-headline { font-size: 36px; }
+  .stat { min-width: 100%; }
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+  .class-card { flex: 0 0 160px; height: 250px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide, .slide img { transition: none; }
+  .hero-headline, .hero-sub, .hero-actions { animation: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── ANNOUNCEMENT BAR ─── -->
+<div class="announce-bar" role="banner">
+  <span class="announce-bar-pill">Limited Spots</span>
+  <span>🏋️ <strong>First trial session FREE.</strong> Walk in or call 091376 98201. No commitment needed.</span>
+  <a href="#book">Book Now</a>
+</div>
+
+<!-- ─── NAV ─── -->
+<nav id="site-nav">
+  <a href="#" class="logo" aria-label="Yodha The Incredible Fitness home">
+    <img src="yodha_logo.png" alt="Yodha The Incredible Fitness" class="logo-icon">
+  </a>
+  <div class="nav-center" role="navigation" aria-label="Primary">
+    <a href="#">Home</a>
+    <a href="#classes">Our Classes</a>
+    <a href="#training">Training</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-buttons">
+      <a href="#classes" class="btn-nav secondary">View Classes</a>
+      <a href="#book" class="btn-nav primary">Free Trial</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#">Home</a>
+  <a href="#classes">Our Classes</a>
+  <a href="#training">Training</a>
+  <a href="#about">About Us</a>
+  <a href="#contact">Contact</a>
+  <div class="mobile-menu-btns">
+    <a href="#classes" class="btn-nav secondary">View Classes</a>
+    <a href="#book" class="btn-nav primary">Free Trial</a>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" aria-label="Hero">
+  <div class="slide active" id="slide-0">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&fit=crop&q=80" alt="Yodha The Incredible Fitness gym floor" loading="eager">
+  </div>
+  <div class="slide" id="slide-1">
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&fit=crop&q=80" alt="Yodha The Incredible Fitness training" loading="eager">
+  </div>
+  <div class="slide" id="slide-2">
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&fit=crop&q=80" alt="Yodha The Incredible Fitness workout" loading="eager">
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-headline">
+      YOUR FITNESS GYM<br>
+      <span class="accent">IN SION, MUMBAI.</span>
+    </h1>
+  </div>
+
+  <div class="hero-cards">
+    <!-- Card 1: Personal Training -->
+    <div class="hero-card active">
+      <div class="hero-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M5 20v-1a7 7 0 0114 0v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div class="hero-card-body">
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">1-on-1</span>
+          <span class="hero-card-sub">Expert Coaches</span>
+        </div>
+        <p class="hero-card-heading">Personal Training</p>
+        <p class="hero-card-desc">Get a custom workout plan from certified personal trainers in Sion, Mumbai. Designed for your body, your goals, your schedule.</p>
+      </div>
+      <div class="hero-card-actions">
+        <a href="#training" class="hero-card-btn">Learn More</a>
+        <button class="hero-card-nav">&#8249;</button>
+        <button class="hero-card-nav">&#8250;</button>
+      </div>
+    </div>
+    <!-- Card 2: Group Fitness -->
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="8" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M2 20v-1a6 6 0 0112 0v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 13a6 6 0 016 6v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="hero-card-body">
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">All Levels</span>
+          <span class="hero-card-sub">Daily schedule</span>
+        </div>
+        <p class="hero-card-heading">Group Fitness</p>
+        <p class="hero-card-desc">Join high-energy group fitness classes in Sion. All levels welcome. Expert instructors, daily schedule, real results.</p>
+      </div>
+      <div class="hero-card-actions">
+        <a href="#classes" class="hero-card-btn">View Schedule</a>
+        <button class="hero-card-nav">&#8249;</button>
+        <button class="hero-card-nav">&#8250;</button>
+      </div>
+    </div>
+    <!-- Card 3: HIIT & Cardio -->
+    <div class="hero-card">
+      <div class="hero-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="hero-card-body">
+        <div class="hero-card-meta">
+          <span class="hero-card-badge">Burn & Build</span>
+          <span class="hero-card-sub">Maximum Results</span>
+        </div>
+        <p class="hero-card-heading">HIIT & Cardio</p>
+        <p class="hero-card-desc">Burn fat and build endurance with HIIT cardio sessions at Yodha. Fast results for busy schedules in Mumbai.</p>
+      </div>
+      <div class="hero-card-actions">
+        <a href="#classes" class="hero-card-btn">Join a Class</a>
+        <button class="hero-card-nav">&#8249;</button>
+        <button class="hero-card-nav">&#8250;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── TRAINING ─── -->
+<section class="training" id="training" aria-labelledby="training-heading">
+  <div class="training-inner">
+
+    <!-- Weight Training -->
+    <div class="training-row">
+      <div class="training-img">
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&fit=crop&q=80" alt="Weight training at Yodha">
+        <div class="training-img-caption">
+          <p class="training-img-caption-label">Weight Training</p>
+          <p class="training-img-caption-sub">All Strength Levels</p>
+        </div>
+      </div>
+      <div class="training-text">
+        <p class="eyebrow">Strength Training</p>
+        <h2 class="section-heading" id="training-heading">BUILD STRENGTH.<br><span style="color:var(--orange);">BUILD POWER.</span></h2>
+        <p class="section-body">Yodha's weight training zone in Sion, Mumbai is fully loaded with free weights, barbells, cables and machines. Whether you are a beginner or an advanced lifter, our certified coaches will help you build real strength and a physique you are proud of.</p>
+        <ul class="service-bullets">
+          <li>Free weights & plate-loaded stations</li>
+          <li>Cable machines & functional equipment</li>
+          <li>Structured beginner-to-advanced programs</li>
+          <li>Certified coaches on the floor daily</li>
+        </ul>
+        <a href="#classes" class="training-explore-link">View Programs <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M1 6h16M11 1l6 5-6 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Group Fitness -->
+    <div class="training-row flip">
+      <div class="training-img">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&fit=crop&q=80" alt="Group fitness class at Yodha">
+        <div class="training-img-caption">
+          <p class="training-img-caption-label">Group Fitness</p>
+          <p class="training-img-caption-sub">Every Fitness Level</p>
+        </div>
+      </div>
+      <div class="training-text">
+        <p class="eyebrow">Group Classes</p>
+        <h2 class="section-heading">STRONGER<br><span style="color:var(--orange);">TOGETHER.</span></h2>
+        <p class="section-body">Yodha's group fitness classes in Mumbai are designed to keep you motivated and moving. With a rotating weekly schedule, expert instructors and a welcoming community, getting fit has never been this enjoyable.</p>
+        <ul class="service-bullets">
+          <li>Rotating weekly class schedule</li>
+          <li>Beginner-friendly, all levels welcome</li>
+          <li>HIIT, Zumba, Aerobics & more</li>
+          <li>Expert instructors driving every session</li>
+        </ul>
+        <a href="#classes" class="training-explore-link">View Schedule <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M1 6h16M11 1l6 5-6 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Personal Training -->
+    <div class="training-row">
+      <div class="training-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&fit=crop&q=80" alt="Personal training at Yodha">
+        <div class="training-img-caption">
+          <p class="training-img-caption-label">Personal Training</p>
+          <p class="training-img-caption-sub">1-on-1 Coaching</p>
+        </div>
+      </div>
+      <div class="training-text">
+        <p class="eyebrow">Personal Training</p>
+        <h2 class="section-heading">YOUR GOALS.<br><span style="color:var(--orange);">OUR MISSION.</span></h2>
+        <p class="section-body">Work 1-on-1 with a certified personal trainer at Yodha Fitness, Sion. Get a fully customised workout and nutrition plan built for your body type, fitness goals and schedule. Weight loss, muscle gain or sports performance: we have you covered.</p>
+        <ul class="service-bullets">
+          <li>Personalised workout & nutrition guidance</li>
+          <li>Progress tracking every step of the way</li>
+          <li>Weight loss, muscle gain & athletic performance</li>
+          <li>Flexible scheduling to match your routine</li>
+        </ul>
+        <a href="#book" class="training-explore-link">Book a Session <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M1 6h16M11 1l6 5-6 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── AMENITIES ─── -->
+<section class="amenities" id="amenities" aria-labelledby="amenities-heading">
+  <div class="amenities-inner">
+    <div class="amenities-left">
+      <h2 class="amenities-heading" id="amenities-heading">The Facility</h2>
+      <div class="amenities-grid">
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v16M18 4v16M3 8h4M17 8h4M3 16h4M17 16h4M6 12h12"/></svg>
+          </div>
+          <span class="amenity-name">Weight Training Zone</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="7"/><path d="M12 5v14M5.5 7.5l13 9M18.5 7.5l-13 9"/></svg>
+          </div>
+          <span class="amenity-name">Cardio Equipment</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <span class="amenity-name">Group Class Studio</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+          </div>
+          <span class="amenity-name">Personal Training Area</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <span class="amenity-name">Locker Rooms</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 5.6 5 10c0 5.3 7 12 7 12s7-6.7 7-12c0-4.4-3-8-7-8z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </div>
+          <span class="amenity-name">Prime Location</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 6V4a2 2 0 014 0v2M14 6V4a2 2 0 014 0v2"/></svg>
+          </div>
+          <span class="amenity-name">AC Facility</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <span class="amenity-name">Long Open Hours</span>
+        </div>
+
+        <div class="amenity">
+          <div class="amenity-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <span class="amenity-name">Expert Trainers</span>
+        </div>
+
+        <button class="amenity-cta-card" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">
+          <span class="amenity-cta-name">See It Yourself</span>
+          <span class="amenity-cta-sub">Book a free trial session</span>
+        </button>
+
+      </div>
+    </div>
+    <div class="amenities-gallery">
+      <div class="amenities-main">
+        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&fit=crop&q=80" alt="Yodha facility" class="amenities-main-img" id="amenities-main-img">
+        <button class="amenities-gallery-btn prev" id="amenities-prev" aria-label="Previous photo">&#8249;</button>
+        <button class="amenities-gallery-btn next" id="amenities-next" aria-label="Next photo">&#8250;</button>
+      </div>
+      <div class="amenities-thumbs">
+        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&fit=crop&q=80" alt="Gym floor" class="amenities-thumb active" data-index="0">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&fit=crop&q=80" alt="Weight area" class="amenities-thumb" data-index="1">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&fit=crop&q=80" alt="Cardio zone" class="amenities-thumb" data-index="2">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&fit=crop&q=80" alt="Group class" class="amenities-thumb" data-index="3">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&fit=crop&q=80" alt="Training session" class="amenities-thumb" data-index="4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OUR CLASSES ─── -->
+<section class="classes" id="classes" aria-labelledby="classes-heading">
+  <div class="classes-header">
+    <div>
+      <h2 class="classes-heading" id="classes-heading">Our <span class="accent">Classes</span></h2>
+    </div>
+    <div class="classes-nav">
+      <button class="classes-nav-btn" id="classes-prev" aria-label="Previous">&#8249;</button>
+      <button class="classes-nav-btn" id="classes-next" aria-label="Next">&#8250;</button>
+    </div>
+  </div>
+  <div class="classes-track-wrap">
+    <div class="classes-track" id="classes-track">
+
+      <div class="class-card active">
+        <img class="class-card-img" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&fit=crop&q=80" alt="Weight Training">
+        <div class="class-card-overlay"></div>
+        <div class="class-card-content">
+          <span class="class-card-tag">Strength</span>
+          <span class="class-card-name">Weight Training</span>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img class="class-card-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&fit=crop&q=80" alt="HIIT Training">
+        <div class="class-card-overlay"></div>
+        <div class="class-card-content">
+          <span class="class-card-tag">Fat Burn</span>
+          <span class="class-card-name">HIIT Training</span>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img class="class-card-img" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&fit=crop&q=80" alt="Personal Training">
+        <div class="class-card-overlay"></div>
+        <div class="class-card-content">
+          <span class="class-card-tag">Private</span>
+          <span class="class-card-name">Personal Training</span>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img class="class-card-img" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500&fit=crop&q=80" alt="Group Fitness">
+        <div class="class-card-overlay"></div>
+        <div class="class-card-content">
+          <span class="class-card-tag">All Levels</span>
+          <span class="class-card-name">Group Fitness</span>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img class="class-card-img" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&fit=crop&q=80" alt="Cardio Zone">
+        <div class="class-card-overlay"></div>
+        <div class="class-card-content">
+          <span class="class-card-tag">Endurance</span>
+          <span class="class-card-name">Cardio Zone</span>
+        </div>
+      </div>
+
+      <div class="class-card">
+        <img class="class-card-img" src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=500&fit=crop&q=80" alt="Yoga & Flexibility">
+        <div class="class-card-overlay"></div>
+        <div class="class-card-content">
+          <span class="class-card-tag">Mind & Body</span>
+          <span class="class-card-name">Yoga & Flex</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="about-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--orange);">About Us</p>
+      <h2 class="about-heading" id="about-heading">MUMBAI'S PREMIER<br><span style="color:var(--orange);">FITNESS CENTER</span></h2>
+      <div class="about-content">
+        <p>Yodha The Incredible Fitness is Sion, Mumbai's most trusted gym for weight training, personal training and group fitness. We are built for anyone serious about health, strength and lasting transformation.</p>
+        <p>Whether you are stepping into a gym for the first time or a seasoned athlete pushing for peak performance, our certified trainers and fully equipped facility in Sion are here to help you reach your goals faster.</p>
+      </div>
+      <ul class="about-checklist">
+        <li>No experience necessary. All fitness levels welcome</li>
+        <li>Certified personal trainers on staff</li>
+        <li>Fully air-conditioned, modern facility</li>
+        <li>Open 6 days a week, 17 hours a day</li>
+      </ul>
+    </div>
+    <div class="about-img-wrap">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&fit=crop&q=80" alt="Yodha The Incredible Fitness facility">
+      <div class="about-img-badge">
+        <p class="about-img-badge-title">4.8 ★ on Google</p>
+        <p class="about-img-badge-sub">95+ 5-star reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOURS ─── -->
+
+<!-- ─── CTA STRIP ─── -->
+<div class="cta-strip-wrap">
+<section class="cta-strip" aria-label="Call to action">
+  <h2 class="cta-strip-heading">YOUR FIRST SESSION<br>IS ON US.</h2>
+  <p class="cta-strip-sub">No experience needed. No gear required. Just walk into Yodha Fitness in Sion and we will take care of the rest. Hundreds of Mumbai members started exactly where you are right now.</p>
+  <a href="#book" class="btn-cta-dark">Book My Free Session</a>
+  <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.6);font-family:'Inter',sans-serif;">Call us: <a href="tel:09137698201" style="color:#fff;font-weight:600;">091376 98201</a></p>
+</section>
+</div>
+
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" aria-labelledby="testimonials-heading">
+  <div class="testimonials-inner">
+    <div class="testimonials-stars">
+      <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+      <span class="testimonials-rating">&nbsp;4.8 Stars - Google Reviews</span>
+    </div>
+    <h2 class="testimonials-heading" id="testimonials-heading">What Our <span style="color:var(--orange);">Members Say</span></h2>
+    <p class="testimonials-sub">Real people. Real results. Hear from the Yodha community.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <p class="testimonial-quote">Yodha Gym provides an excellent fitness environment with modern equipment, a clean facility, and a motivating atmosphere. The gym offers professional guidance and a supportive environment that helps members stay focused on their fitness goals. Anurag, Arjun, and Ketan are highly knowledgeable and dedicated trainers who provide expert guidance, personalised workout plans, and constant motivation to help members achieve their fitness goals.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <p class="testimonial-name">Shubham Gupta</p>
+            <p class="testimonial-stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <p class="testimonial-quote">Yodha Gym is such a welcoming, hygienic and comfortable space for women. The trainers are extremely professional, encouraging and always ready to guide you. Special shoutout to Arjun Sir and Sumit Sir for being so supportive and motivating throughout.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">K</div>
+          <div>
+            <p class="testimonial-name">Khushi</p>
+            <p class="testimonial-stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <p class="testimonial-quote">Yodha Gym is one of the finest fitness centers I have joined. The trainers are highly professional, supportive, and always motivate members to achieve their fitness goals. The gym is well-maintained, clean, and equipped with modern machines. The atmosphere is energetic and positive, making every workout enjoyable. Whether your goal is weight loss, muscle gain, or overall fitness, Yodha Gym provides excellent guidance and results.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <p class="testimonial-name">Ashish Dixit</p>
+            <p class="testimonial-stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <p class="testimonial-quote">Spacious, clean and very female-friendly gym with highly professional trainers. Special mention to Arjun Sir and Sumit Sir — both are amazing, supportive and motivating. Yodha gym is truly the best! Highly recommended!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <p class="testimonial-name">Jyotsna Sharif</p>
+            <p class="testimonial-stars">★★★★★</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq" aria-labelledby="faq-heading">
+  <div class="faq-inner">
+    <h2 class="faq-heading" id="faq-heading">Frequently<br><span style="color:var(--orange);">Asked Questions</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <button class="faq-btn" aria-expanded="true">
+          <span class="faq-question">Do I need any fitness experience to join?</span>
+          <span class="faq-btn-icon">+</span>
+        </button>
+        <p class="faq-answer">Not at all. Yodha The Incredible Fitness in Sion is designed for all fitness levels, from complete beginners to experienced athletes. Our certified trainers will assess your current level and build a program that meets you exactly where you are.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">What classes and programs do you offer?</span>
+          <span class="faq-btn-icon">+</span>
+        </button>
+        <p class="faq-answer">We offer Weight Training, HIIT, Group Fitness, Personal Training, Cardio sessions, and Yoga & Flexibility classes. Every program is coach-led and designed for measurable results.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">What are your opening hours?</span>
+          <span class="faq-btn-icon">+</span>
+        </button>
+        <p class="faq-answer">We are open Monday through Saturday from 6:00 AM to 11:00 PM (17 hours!) and on Sundays from 7:00 AM to 2:00 PM. We've designed our schedule to accommodate early risers, office-goers, and evening workout enthusiasts.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">Do you offer personal training?</span>
+          <span class="faq-btn-icon">+</span>
+        </button>
+        <p class="faq-answer">Yes! Our certified personal trainers offer fully customised 1-on-1 coaching. Whether your goal is weight loss, muscle gain, or athletic performance, we'll design a plan specifically for you, track your progress, and keep you accountable.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">How do I get started?</span>
+          <span class="faq-btn-icon">+</span>
+        </button>
+        <p class="faq-answer">The easiest way to join Yodha The Incredible Fitness is to walk in to our Sion location or call us at 091376 98201. You can also fill out the form on this page and we will get back to you within 24 hours. Your first trial session is completely free with no pressure and no commitment.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-question">Where are you located?</span>
+          <span class="faq-btn-icon">+</span>
+        </button>
+        <p class="faq-answer">We're located on the 2nd floor, above Sai Place Banquet Hall, opposite Seva Samiti Society, Anand Nagar Housing Society, Guru Teg Bahadur Nagar, Sion, Mumbai 400037. Easy to find, easy to reach.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── LEAD CAPTURE FORM ─── -->
+<section class="lead-form-section" id="book" aria-labelledby="form-heading">
+  <div class="lead-form-inner">
+    <div>
+      <h2 class="lead-form-heading" id="form-heading">BOOK YOUR<br><span style="color:var(--orange);">FREE SESSION TODAY</span></h2>
+      <p class="lead-form-sub">Visit Yodha The Incredible Fitness in Sion, Mumbai, meet our certified trainers and find the right program for your goals. Your first trial session is completely free. No pressure, no commitment.</p>
+      <div class="lead-form-trust">
+        <div class="lead-form-badge"><span>★</span> 4.8 Stars on Google</div>
+        <div class="lead-form-badge"><span>✓</span> No commitment</div>
+        <div class="lead-form-badge"><span>✓</span> All levels welcome</div>
+      </div>
+    </div>
+
+    <div class="lead-form" role="form" aria-label="Book a free session">
+      <p class="lead-form-title">Book a Free Session</p>
+      <p class="lead-form-note">We'll reach out within 24 hours to confirm your visit.</p>
+      <form onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="f-name">Your Name</label>
+          <input class="form-input" id="f-name" type="text" placeholder="Rahul Sharma" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-phone">Phone Number</label>
+          <input class="form-input" id="f-phone" type="tel" placeholder="9876543210" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-interest">I'm Interested In</label>
+          <select class="form-input" id="f-interest">
+            <option value="">Select a program...</option>
+            <option>Weight Training</option>
+            <option>HIIT Classes</option>
+            <option>Group Fitness</option>
+            <option>Personal Training</option>
+            <option>Cardio / Weight Loss</option>
+            <option>Yoga & Flexibility</option>
+            <option>General Membership</option>
+          </select>
+        </div>
+        <button class="form-submit" type="submit">
+          Book My Free Session
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h14M9 1l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p class="form-privacy">We respect your privacy. Your info is never shared.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer id="contact">
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <a href="#" class="logo" aria-label="Yodha The Incredible Fitness">
+        <img src="yodha_logo.png" alt="Yodha The Incredible Fitness" style="height:60px;width:auto;max-width:150px;object-fit:contain;display:block;">
+      </a>
+      <p class="footer-tagline">Mumbai's premier fitness center in Sion. Transform your body, build your strength, and join a community that pushes you to be your best.</p>
+
+      <p class="footer-address-label">Address</p>
+      <p class="footer-address">2nd Floor, Above Sai Place Banquet Hall<br>Anand Nagar Housing Society,<br>Guru Teg Bahadur Nagar, Sion<br>Mumbai, Maharashtra 400037</p>
+
+      <p class="footer-address-label" style="margin-top:14px;">Phone</p>
+      <p class="footer-address"><a href="tel:09137698201">091376 98201</a></p>
+
+      <div class="footer-socials">
+        <a href="#" class="footer-social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="footer-social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="footer-social-btn" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">Weight Training</a></li>
+        <li><a href="#">HIIT Classes</a></li>
+        <li><a href="#">Group Fitness</a></li>
+        <li><a href="#">Personal Training</a></li>
+        <li><a href="#">Yoga & Flexibility</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <div class="footer-hours-table">
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Monday</span>
+          <span class="footer-hours-time">6:00 AM - 11:00 PM</span>
+        </div>
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Tuesday</span>
+          <span class="footer-hours-time">6:00 AM - 11:00 PM</span>
+        </div>
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Wednesday</span>
+          <span class="footer-hours-time">6:00 AM - 11:00 PM</span>
+        </div>
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Thursday</span>
+          <span class="footer-hours-time">6:00 AM - 11:00 PM</span>
+        </div>
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Friday</span>
+          <span class="footer-hours-time">6:00 AM - 11:00 PM</span>
+        </div>
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Saturday</span>
+          <span class="footer-hours-time">6:00 AM - 11:00 PM</span>
+        </div>
+        <div class="footer-hours-row">
+          <span class="footer-hours-day">Sunday</span>
+          <span class="footer-hours-time">7:00 AM - 2:00 PM</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Yodha The Incredible Fitness. All rights reserved.</p>
+    <p class="footer-loc">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Sion, Mumbai, Maharashtra 400037
+    </p>
+  </div>
+</footer>
+
+<!-- ─── FLOATING MOBILE CTA ─── -->
+<div class="float-cta" role="complementary" aria-label="Quick actions">
+  <a href="tel:09137698201" class="float-cta-btn secondary">📞 Call Us</a>
+  <a href="#book" class="float-cta-btn primary">Free Trial</a>
+</div>
+
+<script>
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ Request Sent!';
+  btn.style.background = '#2a7a2a';
+  setTimeout(() => {
+    btn.innerHTML = 'Book My Free Session <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h14M9 1l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3500);
+}
+
+(function () {
+  'use strict';
+
+
+  /* ── Hero card mini-carousel ── */
+  const heroCards = Array.from(document.querySelectorAll('.hero-card'));
+  let heroIdx = 0;
+  function showHeroCard(i) {
+    heroCards.forEach((c, idx) => c.classList.toggle('active', idx === i));
+  }
+  let heroTimer = setInterval(() => {
+    heroIdx = (heroIdx + 1) % heroCards.length;
+    showHeroCard(heroIdx);
+  }, 3500);
+  document.querySelectorAll('.hero-card-nav').forEach(btn => {
+    btn.addEventListener('click', function () {
+      clearInterval(heroTimer);
+      const isPrev = this.textContent.trim() === '‹';
+      heroIdx = (heroIdx + (isPrev ? -1 : 1) + heroCards.length) % heroCards.length;
+      showHeroCard(heroIdx);
+      heroTimer = setInterval(() => {
+        heroIdx = (heroIdx + 1) % heroCards.length;
+        showHeroCard(heroIdx);
+      }, 3500);
+    });
+  });
+
+  /* ── NAV scroll state ── */
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  /* ── Hamburger menu ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  /* ── Hero slider ── */
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  let timer;
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 3000);
+  }
+  startTimer();
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (mq.matches) clearInterval(timer);
+  mq.addEventListener('change', () => { mq.matches ? clearInterval(timer) : startTimer(); });
+
+  /* ── Classes carousel ── */
+  (function () {
+    const track = document.getElementById('classes-track');
+    const prev  = document.getElementById('classes-prev');
+    const next  = document.getElementById('classes-next');
+    if (!track) return;
+    const CARD_W  = () => { const c = track.querySelector('.class-card'); return c ? c.offsetWidth + 14 : 244; };
+    const VISIBLE = () => track.parentElement.offsetWidth;
+    let offset = 0;
+    function clamp(v) { return Math.max(0, Math.min(v, track.scrollWidth - VISIBLE())); }
+    function move(d) { offset = clamp(offset + d); track.style.transform = `translateX(-${offset}px)`; }
+    next.addEventListener('click', () => move(CARD_W() * 2));
+    prev.addEventListener('click', () => move(-CARD_W() * 2));
+  })();
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ── Amenities gallery ── */
+  (function () {
+    const imgs = [
+      'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&fit=crop&q=80'
+    ];
+    let current = 0;
+    const mainImg = document.getElementById('amenities-main-img');
+    const thumbs  = document.querySelectorAll('.amenities-thumb');
+    function goTo(idx) {
+      current = (idx + imgs.length) % imgs.length;
+      mainImg.src = imgs[current];
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+    }
+    document.getElementById('amenities-prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('amenities-next').addEventListener('click', () => goTo(current + 1));
+    thumbs.forEach(t => t.addEventListener('click', () => goTo(+t.dataset.index)));
+  })();
+})();
+</script>
+</body>
+</html>
