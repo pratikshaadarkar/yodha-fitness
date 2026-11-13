@@ -1196,16 +1196,17 @@ footer { background: #ffffff; padding: 72px 48px 36px; border-top: 1px solid rgb
     </div>
     <div class="amenities-gallery">
       <div class="amenities-main">
-        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&fit=crop&q=80" alt="Yodha facility" class="amenities-main-img" id="amenities-main-img">
+        <img src="gym-1.png" alt="Yodha Fitness dumbbell rack" class="amenities-main-img" id="amenities-main-img">
         <button class="amenities-gallery-btn prev" id="amenities-prev" aria-label="Previous photo">&#8249;</button>
         <button class="amenities-gallery-btn next" id="amenities-next" aria-label="Next photo">&#8250;</button>
       </div>
       <div class="amenities-thumbs">
-        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&fit=crop&q=80" alt="Gym floor" class="amenities-thumb active" data-index="0">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&fit=crop&q=80" alt="Weight area" class="amenities-thumb" data-index="1">
-        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&fit=crop&q=80" alt="Cardio zone" class="amenities-thumb" data-index="2">
-        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&fit=crop&q=80" alt="Group class" class="amenities-thumb" data-index="3">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&fit=crop&q=80" alt="Training session" class="amenities-thumb" data-index="4">
+        <img src="gym-1.png" alt="Dumbbell rack" class="amenities-thumb active" data-index="0">
+        <img src="gym-2.png" alt="Cardio zone" class="amenities-thumb" data-index="1">
+        <img src="gym-3.png" alt="Cable machine" class="amenities-thumb" data-index="2">
+        <img src="gym-4.png" alt="Functional trainer" class="amenities-thumb" data-index="3">
+        <img src="gym-5.png" alt="Gym floor" class="amenities-thumb" data-index="4">
+        <img src="gym-6.png" alt="Consultation room" class="amenities-thumb" data-index="5">
       </div>
     </div>
   </div>
@@ -1705,11 +1706,12 @@ function handleFormSubmit(e) {
   /* ── Amenities gallery ── */
   (function () {
     const imgs = [
-      'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&fit=crop&q=80'
+      'gym-1.png',
+      'gym-2.png',
+      'gym-3.png',
+      'gym-4.png',
+      'gym-5.png',
+      'gym-6.png'
     ];
     let current = 0;
     const mainImg = document.getElementById('amenities-main-img');
